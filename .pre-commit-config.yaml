@@ -5,7 +5,7 @@ repos:
       - id: add-copyright-nkd
         name: Add NKD copyright header for new files
         entry: python check_copyright.py
-        language: script
+        language: system
         files: \.(c|h|cpp|hpp|ino)$
         stages: [commit]
   # 2) Other useful hooks (Optional)
