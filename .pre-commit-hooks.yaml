@@ -1,7 +1,7 @@
 - id: add-copyright-nkd
   name: Add NKD copyright header for new files
-  description: Insert C/C++ style copyright header only for newly added files (git status A)
-  entry: python3 check_copyright.py
-  language: python
+  entry: python check_copyright.py
+  language: script
+  types: [text]
   files: \.(c|h|cpp|hpp|ino)$
   stages: [commit]
