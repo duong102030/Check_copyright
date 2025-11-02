@@ -1,0 +1,27 @@
+repos:
+  # 1) Call the hook of the current repo (in dev/test)
+  - repo: local
+    hooks:
+      - id: add-copyright-nkd
+        name: Add NKD copyright header for new files
+        entry: python check_copyright.py
+        language: python
+        files: \.(c|h|cpp|hpp|ino)$
+        stages: [commit]
+  # 2) Other useful hooks (Optional)
+  - repo: https://github.com/pre-commit/pre-commit-hooks.git
+    rev: v4.6.0
+    hooks:
+    - id: check-added-large-files # 500KB
+      stages: [commit]
+    - id: check-ast
+      stages: [commit]
+    - id: check-merge-conflict # no ">>>> strings"
+      stages: [commit]
+    - id: check-xml
+      stages: [commit]
+    - id: check-yaml
+      stages: [commit]
+    - id: trailing-whitespace
+      stages: [commit]
+      args: [--markdown-linebreak-ext=md]
